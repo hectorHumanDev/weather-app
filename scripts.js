@@ -5,11 +5,12 @@ const centerTemp = document.querySelector(".center-temp");
 const centerCity = document.querySelector(".center-city");
 const minTemp = document.querySelector(".footer-min");
 const maxTemp = document.querySelector(".footer-max");
+const apiKey = process.env.API_Key;
 
 const fetchData = async (postalCode) => {
   try {
     const response = await fetch(
-      `https://api.weatherapi.com/v1/forecast.json?key=159e9a3cd6c44b3b9dc185116242406&q=${postalCode}&days=3&aqi=no&alerts=no`
+      `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}=${postalCode}&days=3&aqi=no&alerts=no`
     );
     if (!response.ok) {
       console.error("response error");
